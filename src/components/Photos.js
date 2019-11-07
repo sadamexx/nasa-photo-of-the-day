@@ -18,31 +18,20 @@ export default function Photos() {
                 setPhotos(response.data)
             }); //ends then                 
     }, []) //ends Useeffect
-
-    return ( <
-        div className = "container" > {
-            photos.map(item => {
-                return ( <
-                    PhotoCard key = {
-                        item.hdurl
-                    }
-                    url = {
-                        item.url
-                    }
-                    title = {
-                        item.title
-                    }
-                    date = {
-                        item.date
-                    }
-                    explanation = {
-                        item.explanation
-                    }
+    console.log(photos);
+    return ( 
+    <div className = "container"> 
+        {photos.map(item => {
+                return (<PhotoCard key = {
+                        // key = {item,hdurl}
+                        url = {item.url}
+                        title = {item.title}
+                        date = {item.date}    
+                        explanation = {item.explanation}                    
                     />
                 )
-            })
-        } <
-        /div>
+            })}
+        </div>
     ); //ends return
 
 } //ends function
