@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import PhotoCard from "./components/PhotoCard"
+import { Container, Row } from 'reactstrap';
 import axios from "axios";
 import "./App.css";
 
@@ -22,10 +23,11 @@ function App() {
       <div className="header">
         <h1>Daily Dose of SPACE STUFF!</h1>
       </div>
-    <div className="hero-container">
+    <Container>
+      <Row>
        {photos&&<PhotoCard title={photos.title} date={photos.date} explanation={photos.explanation} url={photos.url}/>}
-      
-      </div>  
+       </Row>
+      </Container>  
     </div>
   );
 }

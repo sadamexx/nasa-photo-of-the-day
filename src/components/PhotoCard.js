@@ -1,13 +1,23 @@
 import React from "react";
+import {
+    Card, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle, 
+  } from 'reactstrap';
+import { Col } from 'reactstrap';
 
 const PhotoCard = props => {
-    return (
-        <div className="photo-card">
-            <h2>Photo Title: {props.title} </h2>
-            <p>{props.date}</p>
-            <p>{props.explanation}</p> 
-            <img className="nasa-photo" alt="APOD-img" src={props.url}/>       
-        </div>            
+    return (  
+        <Col xs="12" s="6" md="4">    
+        <Card>
+        <CardImg top width="100%" src={props.url} alt="APOD-img" />
+        <CardBody>
+          <CardTitle>Photo Title: {props.title}</CardTitle>
+          <CardSubtitle>Photo for: {props.date}</CardSubtitle>
+          <CardText>{props.explanation}</CardText>          
+        </CardBody>
+      </Card>
+      </Col>
+                
     );//ends return
 };//ends Photocard
 
